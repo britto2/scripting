@@ -1,1 +1,32 @@
+#!/usr/bin/env bash
 
+# A fortune-telling game
+
+echo -e "\t\t   Welcome  to  the "
+echo -e "\t\t🔮 \033[5mMYSTICAL  SPHERE\033[0m 🔮"
+echo
+
+waitingnumber=$(( 0 + RANDOM % 2 ))
+mysterynumber=$(( 1 + RANDOM % 9 ))
+
+declare -a fortunes=(
+    "Myabe you should sleep on it."
+    "The star's alignment doesn't project a good outcome."
+    "Wait until the next full moon."
+    "If your left hand is itchy, sure, go ahead."
+    "All you have is time and choices."
+    "The eagle you say today was your sign."
+    "Go smudge yourself."
+    "February 30 might be a better day to do that."
+    "Sure, but what would Dr. Laura do?"
+)
+
+case $waitingnumber in
+    0) sleep 1; echo "I'll be right with you!"; sleep 1;;
+    1) sleep 1; echo "Waiting..."; sleep 2;;
+    2) sleep 1; echo "skoden!"; sleep 1;;
+esac
+
+echo
+echo "${fortunes[mysterynumber]}"
+echo
